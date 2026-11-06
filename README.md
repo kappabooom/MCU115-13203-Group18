@@ -8,3 +8,11 @@
 | [作業四](作業四) | FoodOrderingWizard | Fragment 點餐 App：一個主畫面 + 主餐、副餐、飲料、確認四個 Fragment，確認時跳出 AlertDialog 或 Toast |
 | [作業五](作業五) | ThreadHandlerWizard | 用 HandlerThread + Handler 跑背景工作，搭配圓形進度條，可以中途取消 |
 | [作業六](作業六) | ThreadHandlerWizard | 以作業五為基礎，背景工作執行時播放背景音樂，完成或取消時停止 |
+
+## 如何執行
+
+1. 點綠色「Code」→「Download ZIP」，解壓縮。
+2. Android Studio →「File → Open」，選要執行的作業資料夾（例如 `作業四`，不是最外層資料夾）。
+3. 等 Gradle Sync 完成後，選擇模擬器（Android 8.0 / API 26 以上）並按 ▶ Run。
+
+> 若 Windows 上仍因路徑含中文而 Sync 失敗，請將該作業資料夾複製到全英文路徑（例如 `C:\AndroidHW\hw4`）再開啟。
