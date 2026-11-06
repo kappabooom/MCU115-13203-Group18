@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MyCalculator 介面
+    上方：運算符提示 + 兩個 TextView（算式 tvExpression、輸入/結果 tvResult）
+    下方：5 列按鈕
+        AC  C  ⌫  ÷
+        7   8  9  ×
+        4   5  6  -
+        1   2  3  +
+        .   0  =
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calc_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- ===== 顯示區 ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="24dp">
+
+        <!-- 第一個 TextView：顯示算式，例如 1831×2 -->
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="@color/calc_operator"
+            android:textSize="22sp"
+            tools:text="1831×2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- 目前選擇的運算符 -->
+            <TextView
+                android:id="@+id/tvOperator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="32dp"
+                android:textColor="@color/calc_text_dim"
+                android:textSize="26sp"
+                tools:text="×" />
+
+            <!-- 第二個 TextView：顯示目前輸入或計算結果 -->
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="start"
+                android:gravity="end"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="@color/calc_text"
+                android:textSize="44sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ===== 按鈕區 ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <!-- 第 1 列：AC  C  ⌫  ÷ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAllClear"
+                style="@style/CalcButton"
+                android:text="AC" />
+
+            <Button
+                android:id="@+id/btnClear"
+                style="@style/CalcButton"
+                android:text="C" />
+
+            <ImageButton
+                android:id="@+id/btnBackspace"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:contentDescription="@string/backspace"
+                android:src="@drawable/ic_backspace" />
+
+            <Button
+                android:id="@+id/btnDivide"
+                style="@style/CalcButton.Operator"
+                android:text="÷" />
+        </LinearLayout>
+
+        <!-- 第 2 列：7 8 9 × -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn7"
+                style="@style/CalcButton"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/btn8"
+                style="@style/CalcButton"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/btn9"
+                style="@style/CalcButton"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/btnMultiply"
+                style="@style/CalcButton.Operator"
+                android:text="×" />
+        </LinearLayout>
+
+        <!-- 第 3 列：4 5 6 - -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/CalcButton"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/CalcButton"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/CalcButton"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/btnSubtract"
+                style="@style/CalcButton.Operator"
+                android:text="-" />
+        </LinearLayout>
+
+        <!-- 第 4 列：1 2 3 + -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/CalcButton"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/btn2"
+                style="@style/CalcButton"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/CalcButton"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/btnAdd"
+                style="@style/CalcButton.Operator"
+                android:text="+" />
+        </LinearLayout>
+
+        <!-- 第 5 列：. 0 =（等號佔兩格、橘色） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDot"
+                style="@style/CalcButton"
+                android:text="." />
+
+            <Button
+                android:id="@+id/btn0"
+                style="@style/CalcButton"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/btnEquals"
+                style="@style/CalcButton"
+                android:layout_weight="2"
+                android:background="@drawable/bg_button_equals"
+                android:text="=" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

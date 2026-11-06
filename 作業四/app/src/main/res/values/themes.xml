@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.FoodOrderingWizard" parent="Theme.Material3.Light.DarkActionBar">
+        <item name="colorPrimary">#6750A4</item>
+    </style>
+</resources>

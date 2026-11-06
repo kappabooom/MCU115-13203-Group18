@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.ThreadHandlerWizard" parent="Theme.Material3.Light.DarkActionBar" />
+</resources>

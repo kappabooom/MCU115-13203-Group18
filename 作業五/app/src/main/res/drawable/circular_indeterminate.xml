@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 準備中：旋轉的漸層圓環 -->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="360">
+    <shape
+        android:innerRadiusRatio="2.6"
+        android:shape="ring"
+        android:thicknessRatio="14"
+        android:useLevel="false">
+        <gradient
+            android:centerColor="#2962FF"
+            android:endColor="#6200EA"
+            android:startColor="#BDBDBD"
+            android:type="sweep" />
+    </shape>
+</rotate>

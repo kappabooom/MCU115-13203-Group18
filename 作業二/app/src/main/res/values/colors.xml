@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="calc_background">#FF4E4E4E</color>
+    <color name="calc_status_bar">#FF2B2B2B</color>
+    <color name="calc_text">#FFFFFFFF</color>
+    <color name="calc_text_dim">#FFBDBDBD</color>
+    <color name="calc_operator">#FF1BA81B</color>
+    <color name="calc_delete">#FFD32F2F</color>
+    <color name="calc_equals">#FFFF8C00</color>
+    <color name="calc_pressed">#33FFFFFF</color>
+    <color name="ic_launcher_background">#FFFF8C00</color>
+</resources>
